@@ -1,0 +1,37 @@
+{
+  "name": "mtg-api",
+  "version": "1.0.0",
+  "description": "card search",
+  "main": "app.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w -r",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass watch:webpack",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "watch:webpack": "webpack --mode development --watch",
+    "build:webpack": "webpack --mode development",
+    "deploy:webpack": "webpack --mode production"
+  },
+  "author": "Roy",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "autoprefixer": "^7.1.4",
+    "babel-loader": "^8.0.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "jquery": "^3.3.1",
+    "jsdom": "^13.0.0"
+  }
+}
