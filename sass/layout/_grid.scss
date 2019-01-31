@@ -1,0 +1,4 @@
+.grid-container {
+  display: grid;
+  grid-template-rows: [header-start] 6rem [header-end menu-start] min-content [menu-end main-start] minmax(50rem, min-content) [main-end footer-start] min-content [footer-end];
+}

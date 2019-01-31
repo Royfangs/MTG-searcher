@@ -1,0 +1,37 @@
+@mixin hambur {
+  display: inline-block;
+  height: 2px;
+  width: 2rem;
+  background-color: $color-light-2;
+}
+
+//media query manager
+//1 em = 16px, not what i set (10px)
+//land-phone -- 576px / 16px = 36em
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == land-phone {
+    @media only screen and (min-width: 36em) {
+      @content
+    };
+  }
+}
+
+//Bottom line effect
+@mixin bottom-line-effect {
+  &::after {
+    position: absolute;
+    display: block;
+    top: 80%;
+    left: 50%;
+    content: '';
+    width: 0rem;
+    height: 2px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    transition: width .3s ease-out;
+  }
+  &:hover::after{
+    width: 60%;
+  }
+}

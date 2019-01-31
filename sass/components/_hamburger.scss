@@ -1,0 +1,49 @@
+.burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3rem;
+  width: 30%;
+  border: 1px solid $color-light-2;
+  border-radius: 2px;
+  color: $color-light-2;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  @include respond(land-phone) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &__box {
+    position: relative;
+    margin-right: 1rem;
+  }
+
+  &__item {
+    @include hambur;
+  }
+
+  &__item::before,
+  &__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include hambur;
+  }
+
+  &__item::after {
+    top: .7rem;
+  }
+
+  &__text {
+    display: inline-block;
+    padding-bottom: 3px;
+  }
+}
