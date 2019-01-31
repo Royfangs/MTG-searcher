@@ -10,7 +10,7 @@
 }
 
 .menu {
-  //hide element and make it appear from top to buttom
+  //hide element and make it appear from top to button
   height: 0;
   opacity: 0;
   //z-index make all .menu and its children hide and below the web flow
@@ -114,9 +114,9 @@
     grid-column-gap: 1rem;
     padding: 2rem;
 
-    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),url(/img/wizard-phone.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('../img/wizard-phone.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 20%;
     background-attachment: fixed;
   }
 
